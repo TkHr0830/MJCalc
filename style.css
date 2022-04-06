@@ -1,20 +1,21 @@
-@media all and (max-width:1024px){
+@media all and (max-width:1280px){
 .wholetable{
-	font-size:3vw;
+	font-size:3.5vw;
 }
 
 label input[type="radio"]{
 	width:2vw;
 	height:2vw;
 	position:relative;
-	top:-0.27vw;
+	top:-3px;
 }
 
 label input[type="checkbox"]{
 	width:1.8vw;
 	height:1.8vw;
 	position:relative;
-	top:-0.3vw;
+	top:-4px;
+	margin-left:6px
 }
 
 label input[type="number"]{
