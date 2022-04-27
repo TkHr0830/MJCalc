@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+	<div class="wholetable">
+	<label><input type="number" id="haigen" style="text-align:right; width:3.3em;"
+	autocomplete="off" value=250>00</label>
+	<label><input type="number" id="kaeshi" style="text-align:right; width:3.3em;"
+	autocomplete="off" value=300>00</label>
+	<br/>
+	<label><input type="number" id="uma1" style="text-align:right; width:3.3em;"
+	autocomplete="off" value=10></label>
+	-
+	<label><input type="number" id="uma2" style="text-align:right; width:3.3em;"
+	autocomplete="off" value=30></label>
+	<br/>
+		<table border="1px" style="border-collapse:collapse;">
+		<tr>
+		<td>1位</td>
+		<td><label><input type="number" id="ichii" style="text-align:right; width:3.3em;"
+		autocomplete="off" readonly value=250>00</label></td>
+		<td id="so1" style="text-align:right; width:3em;">0</td>
+		</tr>
+		<tr>
+		<td>2位</td>
+		<td><label><input type="number" id="nii" style="text-align:right; width:3.3em;"
+		autocomplete="off" value=250>00</label></td>
+		<td id="so2" style="text-align:right;">0</td>
+		</tr>
+		<tr>
+		<td>3位</td>
+		<td><label><input type="number" id="sani" style="text-align:right; width:3.3em;"
+		autocomplete="off" value=250>00</label></td>
+		<td id="so3" style="text-align:right;">0</td>
+		</tr>
+		<tr>
+		<td>4位</td>
+		<td><label><input type="number" id="yoni" style="text-align:right; width:3.3em;"
+		autocomplete="off" value=250>00</label></td>
+		<td id="so4" style="text-align:right;">0</td>
+		</tr>
+		</table>
+	</div>
+	<script src="calc.js"></script>
+	</body>
+</html>

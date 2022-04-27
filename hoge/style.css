@@ -1,0 +1,9 @@
+@media all and (max-width:1280px){
+.wholetable{
+	font-size:3.5vw;
+}
+
+label input[type="number"]{
+	font-size:3.4vw;
+}
+}
