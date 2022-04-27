@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 	<head>
 		<meta charset="utf-8">
 		<title></title>
@@ -7,15 +7,33 @@
 	</head>
 	<body>
 	<div class="wholetable">
+		<div id="inputpart">
+		<div id="who-when">
+		親子設定
 		<label><input type="radio" id="oya" name="person" autocomplete="off">親</label>
 		<label><input type="radio" id="ko" name="person" autocomplete="off">子</label>
-		<label><input type="number" id="homba" name="homba" min=0 max=10 value=0
+		<hr>
+		場設定
+		<label><input type="number" id="homba" name="homba" min=0 value=0
 		style="width:2.7em;" autocomplete="off">本場</label>
-		<br/>
+		<label><input type="checkbox" id="kiriman" name="kiriman" autocomplete="off">切り上げ満貫</label>
+		</div>
+		<hr>
+		<div id="winning">
+		和了形式
+		<label><input type="radio" id="ron" name="agari" autocomplete="off">ロン和了</label>
+		<label><input type="radio" id="tsumo" name="agari" autocomplete="off">ツモ和了</label>
+		<label><input type="checkbox" id="menzen" name="menzen" autocomplete="off">門前</label>
+		</div>
+		<div id="especial">
+		<hr>
+		牌姿
 		<label><input type="radio" id="7toi" name="early" autocomplete="off">七対子</label>
-		<label><input type="radio" id="pinfu" name="early" autocomplete="off">平和</label>
+		<label><input type="radio" id="pinfu" name="early" autocomplete="off">平和形（喰い平和含む）</label>
 		<label><input type="radio" id="else" name="early" autocomplete="off">その他</label>
-		<table style="border:none;">
+		<hr>
+		</div>
+		<table style="border:none;" id="mendetails">
 		<tr>
 		<td style="vertical-align:top;">面子1
 			<table border="1px" style="border-collapse:collapse;" autocomplete="off">
@@ -25,7 +43,7 @@
 			<label><input type="radio" id="kan1" name="men1" autocomplete="off" value=8>槓子</label>
 			</td></tr>
 			<tr id="dis1"><td style="height:1.25em;">
-			<label><input type="radio" id="tyun1" name="su1" autocomplete="off" value=2 checked>中張牌</label>
+			<label><input type="radio" id="tyun1" name="su1" autocomplete="off" value=2>中張牌</label>
 			<label><input type="radio" id="yao1" name="su1" autocomplete="off" value=4>1/9/字牌</label>
 			</td></tr>
 			<tr><td style="height:1.25em;">
@@ -41,7 +59,7 @@
 			<label><input type="radio" id="kan2" name="men2" autocomplete="off" value=8>槓子</label>
 			</td></tr>
 			<tr id="dis2"><td style="height:1.25em;">
-			<label><input type="radio" id="tyun2" name="su2" autocomplete="off" value=2 checked>中張牌</label>
+			<label><input type="radio" id="tyun2" name="su2" autocomplete="off" value=2>中張牌</label>
 			<label><input type="radio" id="yao2" name="su2" autocomplete="off" value=4>1/9/字牌</label>
 			</td></tr>
 			<tr><td style="height:1.25em;">
@@ -59,7 +77,7 @@
 			<label><input type="radio" id="kan3" name="men3" autocomplete="off" value=8>槓子</label>
 			</td></tr>
 			<tr id="dis3"><td style="height:1.25em;">
-			<label><input type="radio" id="tyun3" name="su3" autocomplete="off" value=2 checked>中張牌</label>
+			<label><input type="radio" id="tyun3" name="su3" autocomplete="off" value=2>中張牌</label>
 			<label><input type="radio" id="yao3" name="su3" autocomplete="off" value=4>1/9/字牌</label>
 			</td></tr>
 			<tr><td style="height:1.25em;">
@@ -75,7 +93,7 @@
 			<label><input type="radio" id="kan4" name="men4" autocomplete="off" value=8>槓子</label>
 			</td></tr>
 			<tr id="dis4"><td style="height:1.25em;">
-			<label><input type="radio" id="tyun4" name="su4" autocomplete="off" value=2 checked>中張牌</label>
+			<label><input type="radio" id="tyun4" name="su4" autocomplete="off" value=2>中張牌</label>
 			<label><input type="radio" id="yao4" name="su4" autocomplete="off" value=4>1/9/字牌</label>
 			</td></tr>
 			<tr><td style="height:1.25em;">
@@ -85,16 +103,24 @@
 		</td>
 		</tr>
 		</table>
+		<div id="heads">
+		<hr>
+		雀頭
 		<label><input type="checkbox" id="yaku" name="atama" autocomplete="off" value=2>役牌雀頭</label>
 		<label><input type="checkbox" id="dabu" name="atama" autocomplete="off" value=4 disabled>連風牌（ダブ東/ダブ南）雀頭</label>
-		<br/>
+		</div>
+		<div id="wait">
+		<hr>
+		待ち
 		<label><input type="radio" id="ryan" name="machi" autocomplete="off">両面/シャボ待ち</label>
 		<label><input type="radio" id="tan" name="machi" autocomplete="off">単騎/嵌張/辺張待ち</label>
+		<hr>
+		</div>
+		</div>
+		<input type="button" id="calc" value="計算">
+		<div id="error" style="color: #ff0000;"></div>
 		<br/>
-		<label><input type="radio" id="ron" name="agari" autocomplete="off">ロン和了</label>
-		<label><input type="radio" id="tsumo" name="agari" autocomplete="off">ツモ和了</label>
-		<br/>
-		<table border="1px" style="border-collapse:collapse; text-align:center;">
+		<table border="1px" id="output1" style="border-collapse:collapse; text-align:center; display:none;">
 		<tr>
 		<td style="width:3em; height:1.25em;">面子1</td><td style="width:3em;">面子2</td>
 		<td style="width:3em;">面子3</td><td style="width:3em;">面子4</td>
@@ -108,19 +134,25 @@
 		<td style="height:1.25em;">待ち</td><td>和了</td><td>副底</td><td colspan=2>合計</td>
 		</tr>
 		<tr>
-		<td style="height:1.25em;"></td><td></td><td></td><td colspan=2></td>
+		<td style="height:1.25em;" id="machifu"></td><td id="kafu"></td>
+		<td id="futei"></td><td colspan=2 id="sum"></td>
 		</tr>
 		</table>
-		<table border="1px" style="border-collapse:collapse; text-align:center;">
+		<br/>
+		<table border="1px"  id="output2" style="border-collapse:collapse; text-align:center; display:none;">
 		<tr>
 		<td style="width:5.5em; height:1.25em;">1飜</td><td style="width:5.5em;">2飜</td>
 		<td style="width:5.5em;">3飜</td><td style="width:5.5em;">4飜</td>
 		</tr>
 		<tr>
-		<td style="height:1.25em;"></td><td></td><td></td><td></td>
+		<td style="height:1.25em;" id="ihan"></td>
+		<td id="ryanhan"></td><td id="sanhan"></td><td id="suhan"></td>
 		</tr>
 		</table>
 	</div>
-	<script src="mencalc.js"></script>
+	<script src="define.js"></script>
+	<script src="display.js"></script>
+	<script src="check.js"></script>
+	<script src="calc.js"></script>
 	</body>
 </html>
