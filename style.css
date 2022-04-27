@@ -1,5 +1,11 @@
-@media all and (max-width:1280px){
-.wholetable{
-	font-size:3.5vw;
+html {
+  height: 100%;
 }
+
+body {
+  height: 100%;
+}
+
+@media all and (max-width:1280px){
+	font-size:3.5vw;
 }
